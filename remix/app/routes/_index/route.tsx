@@ -15,17 +15,17 @@ export default function Index() {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[var(--primary-dark)] color-white items-center box-border font-[Geist]">
-      <div className="sticky top-0 w-full z-10 pb-4">
+    <div className="color-white box-border flex min-h-screen w-full flex-col items-center bg-[var(--primary-dark)] font-[Geist]">
+      <div className="sticky top-0 z-10 w-full pb-4">
         <div
           className={
             isDropdownExpanded
-              ? "absolute top-0 w-full bg-transparent opacity-100 backdrop-blur-xl h-[400px] pt-[20px] md:h-[80px]"
-              : "absolute flex top-0 w-full bg-transparent opacity-100 backdrop-blur-xl justify-center items-center h-[70px] box-border"
+              ? "absolute top-0 h-[400px] w-full bg-transparent pt-[20px] opacity-100 backdrop-blur-xl md:h-[80px]"
+              : "absolute top-0 box-border flex h-[70px] w-full items-center justify-center bg-transparent opacity-100 backdrop-blur-xl"
           }
         >
-          <div className="flex flex-row justify-between items-center w-full max-w-[1440px] h-[60px]">
-            <div className="flex pl-[30px] items-center text-white text-2xl">
+          <div className="flex h-[60px] w-full max-w-[1440px] flex-row items-center justify-between">
+            <div className="flex items-center pl-[30px] text-2xl text-white">
               <h3>NaughtyML</h3>
             </div>
             {/* Displays on < 720px  */}
@@ -33,14 +33,23 @@ export default function Index() {
               <MenuToggle onToggle={toggleNav} />
             </div>
             {/* Displays on > 720px  */}
-            <div className= "hidden md:pr-[20px] md:flex md:flex-row md:gap-[40px] md:items-center md:text-white ">
-              <Link to="/app" className="py-[5px] text-center cursor-pointer no-underline">
+            <div className="hidden md:flex md:flex-row md:items-center md:gap-[40px] md:pr-[20px] md:text-white ">
+              <Link
+                to="/app"
+                className="cursor-pointer py-[5px] text-center no-underline"
+              >
                 Blog
               </Link>
-              <Link to="/app" className="py-[5px] text-center cursor-pointer no-underline ">
+              <Link
+                to="/app"
+                className="cursor-pointer py-[5px] text-center no-underline "
+              >
                 Community
               </Link>
-              <Link to="/app" className="bg-[var(--primary-accent)] text-center cursor-pointer rounded-2xl w-[125px] py-[10px] ">
+              <Link
+                to="/app"
+                className="w-[125px] cursor-pointer rounded-2xl bg-[var(--primary-accent)] py-[10px] text-center "
+              >
                 Launch App
               </Link>
             </div>
@@ -58,42 +67,38 @@ export default function Index() {
               </Link>
             </div>
           )}
-          <hr className="absolute w-full bg-white h-[1px] opacity-10 margin-0 bottom-0 "/>
+          <hr className="margin-0 absolute bottom-0 h-[1px] w-full bg-white opacity-10 " />
         </div>
       </div>
 
-      <div className="flex flex-col  text-white pt-[80px] md:items-center lg:flex-row lg:items-start lg:max-w-[1440px] lg:py-[8%]">
-        <div className= "flex flex-col items-start justify-center max-w-[720px] pl-[30px] pr-[40px] md:max-w-[750px] lg:w-[50%] lg:text-start lg:items-start lg:pt-[20px]">
-          <h1 className="text-4xl pb-[35px] text-[var(--primary-light)] lg:text-6xl">
+      <div className="flex flex-col  pt-[80px] text-white md:items-center lg:max-w-[1440px] lg:flex-row lg:items-start lg:py-[8%]">
+        <div className="flex max-w-[720px] flex-col items-start justify-center pl-[30px] pr-[40px] md:max-w-[750px] lg:w-[50%] lg:items-start lg:pt-[20px] lg:text-start">
+          <h1 className="pb-[35px] text-4xl text-[var(--primary-light)] lg:text-6xl">
             Where Characters <br /> Do
             <span className="font-[Geist-Bold]"> Whatever</span> You Want
           </h1>
-          <h3 className="text-2xl pt-0 pb-[25px] font-[Geist-Light] text-[var(--secondary-light)] lg:text-3xl ">
+          <h3 className="pb-[25px] pt-0 font-[Geist-Light] text-2xl text-[var(--secondary-light)] lg:text-3xl ">
             Spicy conversation with your favorite characters, completely
             uncensored.
           </h3>
-          <Link className="pt-[10px] no_underline" to="/app/create">
+          <Link className="no_underline pt-[10px]" to="/app/create">
             <div className={styles.start_chatting_button}>
               <h4 className="text-lg lg:text-xl">Get Started</h4>
             </div>
           </Link>
         </div>
         <Scroller />
-      
       </div>
       <div className={styles.feature_container}>
-        <h1 className="text-white text-3xl font-[Geist-Bold]">FEATURES</h1>
+        <h1 className="font-[Geist-Bold] text-3xl text-white">FEATURES</h1>
         <FeatureGrid />
       </div>
 
       <div className={styles.faq_container}>
-          <h1>Frequently Asked Questions</h1>
-          <FAQ />
- 
+        <h1>Frequently Asked Questions</h1>
+        <FAQ />
       </div>
-      <div className={styles.footer_container}>
-        Footer
-      </div>
+      <div className={styles.footer_container}>Footer</div>
     </div>
   );
 }

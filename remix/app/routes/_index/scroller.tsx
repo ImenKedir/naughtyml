@@ -32,7 +32,6 @@ const Scroller: React.FC = () => {
       <div className={styles.scroller} data-speed="slow">
         <div className={styles.scroller__inner}>
           <ul className={`${styles.tag_list} ${styles.scroller__inner}`}>
-
             <img id="1" src="/images/image1.jpeg" alt="" />
             <img id="2" src="/images/image2.jpeg" alt="" />
             <img id="3" src="/images/image3.jpeg" alt="" />

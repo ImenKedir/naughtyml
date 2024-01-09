@@ -34,13 +34,18 @@ const cardData = [
 
 const FeatureGrid = () => {
   return (
-    <div className= "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 box-border px-[20px] h-full w-full gap-[30px] columns-2">
+    <div className="box-border grid h-full w-full columns-2 grid-cols-1 gap-[30px] px-[20px] md:grid-cols-2 lg:grid-cols-3">
       {cardData.map((card) => (
-        <div key={card.id} className="flex shadow-lg bg-[var(--secondary-dark)] justify-center text-center p-[10%] transition rounded-xl border border-[var(--secondary-light)] hover:border-[var(--primary-accent)] hover:shadow-2xl">
-          <div className="flex flex-col align-center h-full ">
+        <div
+          key={card.id}
+          className="flex justify-center rounded-xl border border-[var(--secondary-light)] bg-[var(--secondary-dark)] p-[10%] text-center shadow-lg transition hover:border-[var(--primary-accent)] hover:shadow-2xl"
+        >
+          <div className="align-center flex h-full flex-col ">
             <img src={card.source} alt="" />
-            <h1 className="text-2xl text-[var(--primary-light)] font-[Geist-Bold] ">{card.title}</h1>
-            <p className="text-start pt-0 text-white">{card.content}</p>
+            <h1 className="font-[Geist-Bold] text-2xl text-[var(--primary-light)] ">
+              {card.title}
+            </h1>
+            <p className="pt-0 text-start text-white">{card.content}</p>
           </div>
         </div>
       ))}

@@ -48,12 +48,11 @@ export default function Explore() {
         </div>
         <div className="grid w-full grid-cols-2 items-center justify-center gap-4 text-white md:grid-cols-3 md:gap-8 xl:grid-cols-4">
           {data.characters.map((character) => (
-            <div className="transform transition duration-300 sm:hover:scale-105">
-              <CharacterCard
-                key={character.id}
-                {...character}
-                bucket={data.bucket}
-              />
+            <div
+              key={character.id}
+              className="transform cursor-pointer transition duration-300 sm:hover:scale-105"
+            >
+              <CharacterCard {...character} bucket={data.bucket} />
             </div>
           ))}
         </div>
@@ -91,5 +90,5 @@ export async function action({ request }: LoaderFunctionArgs) {
     }),
   ]);
 
-  return redirect(`/app/chat/${characterId}/${chatId}`);
+  return redirect(`/app/character/${characterId}`);
 }

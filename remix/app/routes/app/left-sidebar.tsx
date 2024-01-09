@@ -69,9 +69,8 @@ export function LeftSidebar() {
         <div className="flex h-full w-full flex-col overflow-y-scroll text-white">
           {recentChats.map((chat) => {
             return (
-              <div className="w-full px-4 py-2">
+              <div key={chat.id} className="w-full px-4 py-2">
                 <NavLink
-                  key={chat.id}
                   className={({ isActive }) =>
                     cn(
                       "flex w-full cursor-pointer flex-col items-start rounded p-2 font-[Geist]",
